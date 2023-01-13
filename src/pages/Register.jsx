@@ -87,39 +87,52 @@ function Register() {
       target[2].value,
       target[3].files[0],
     ];
-
-    // createUser method
-    findUser(displayName).then((e) => {
-      if (e) {
-        toast.error("Username already taken !", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-        setLoading(false);
-      } else {
-        createUser(displayName, email, password, imgFile).then((v) => {
+    if (!imgFile) {
+      setLoading(false);
+      toast.error("Select Profile Picture", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      // createUser method
+      findUser(displayName).then((e) => {
+        if (e) {
+          toast.error("Username already taken !", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           setLoading(false);
-          v === "Success"
-            ? navigate("/", { replace: true })
-            : toast.error(getError(v), {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-              });
-        });
-      }
-    });
+        } else {
+          createUser(displayName, email, password, imgFile).then((v) => {
+            setLoading(false);
+            v === "Success"
+              ? navigate("/", { replace: true })
+              : toast.error(getError(v), {
+                  position: "top-center",
+                  autoClose: 3000,
+                  hideProgressBar: true,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                });
+          });
+        }
+      });
+    }
   };
   return (
     <Container>
@@ -143,7 +156,7 @@ function Register() {
           <Input type="text" placeholder="Enter display name" required />
           <Input type="email" placeholder="Enter email address" required />
           <Input type="password" placeholder="Enter password" required />
-          <Input type="file" style={{ display: "none" }} id="file" required />
+          <Input type="file" style={{ display: "none" }} id="file" />
           <Label htmlFor="file">
             <Image src={add} alt="Avatar" />
             <Span size="15px">Add an avatar</Span>
