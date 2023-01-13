@@ -1,0 +1,25 @@
+[debug] [2023-01-13T17:31:13.068Z] ----------------------------------------------------------------------
+[debug] [2023-01-13T17:31:13.073Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amitr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2023-01-13T17:31:13.074Z] CLI Version:   11.20.0
+[debug] [2023-01-13T17:31:13.074Z] Platform:      win32
+[debug] [2023-01-13T17:31:13.074Z] Node Version:  v16.17.0
+[debug] [2023-01-13T17:31:13.077Z] Time:          Fri Jan 13 2023 23:01:13 GMT+0530 (India Standard Time)
+[debug] [2023-01-13T17:31:13.077Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-13T17:31:13.253Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-13T17:31:13.255Z] > authorizing via signed-in user (sumitrawat4200000@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\amitr\OneDrive\Desktop\React\chat_app
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
