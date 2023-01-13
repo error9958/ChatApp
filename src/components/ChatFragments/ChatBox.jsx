@@ -15,7 +15,7 @@ const Container = styled.div`
   padding: 4px 8px;
 
 `;
-const Image = styled.img`
+const Image = styled.img` 
   width: 50%;
   max-width: 50%;
   align-self: ${(props) => {
